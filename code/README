@@ -1,0 +1,26 @@
+This requires Pytorch to be installed on the system. Uses CPU currently for 
+training. Changes can be made in variable use_cuda to enable GPU training
+
+Pytorch Installation
+pip install https://download.pytorch.org/whl/cpu/torch-1.0.0-cp27-cp27mu-linux_x86_64.whl
+pip install torchvision 
+
+Requirements
+Python 2.7
+numpy
+matplotlib
+
+Running the code
+#Download the Lenet in the data folder.
+
+# make a directory where you want to save the models
+mkdir -p models/lenet/run_14
+
+# Run the training
+python train_mnist_binarize_weights_v4.py -s models/lenet/run_14 
+
+# Run the training while saving the log
+python train_mnist_binarize_weights_v4.py -s models/lenet/run_14 | tee models/lenet/run_14/run_14.log
+
+# Plotting the filters
+python visualize_mnist_v5.py

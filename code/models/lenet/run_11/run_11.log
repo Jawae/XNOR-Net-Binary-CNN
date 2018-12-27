@@ -1,0 +1,162 @@
+No data augmentation with noise added in training
+****************************************************************
+		LeNet on MNIST		
+****************************************************************
+Net(
+  (conv1): Conv2d(1, 20, kernel_size=(5, 5), stride=(1, 1))
+  (bn1): BatchNorm2d(20, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu1): ReLU()
+  (max1): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv2): Conv2d(20, 50, kernel_size=(5, 5), stride=(1, 1))
+  (xnor2): MultiplicationWithXNOR(
+    (signum1): Signum(
+      (mean): Mean()
+      (arelu1): AffineReLU(
+        (relu): ReLU()
+      )
+      (arelu2): AffineReLU(
+        (relu): ReLU()
+      )
+      (arelu3): AffineReLU(
+        (relu): ReLU()
+      )
+    )
+    (beta): BetaVector(
+      (mean_vector): MeanVector()
+    )
+    (mul1): ExpandAndMultiply()
+    (signum2): Signum(
+      (mean): Mean()
+      (arelu1): AffineReLU(
+        (relu): ReLU()
+      )
+      (arelu2): AffineReLU(
+        (relu): ReLU()
+      )
+      (arelu3): AffineReLU(
+        (relu): ReLU()
+      )
+    )
+    (alpha): AlphaVector(
+      (mean_vector): MeanVector()
+    )
+    (mul2): ExpandAndMultiply()
+    (bn): BatchNorm2d(20, eps=0.0001, momentum=0.1, affine=True, track_running_stats=True)
+    (conv): Conv2d(20, 50, kernel_size=(5, 5), stride=(1, 1))
+    (relu): ReLU(inplace)
+  )
+  (max2): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (fc1): Linear(in_features=800, out_features=500, bias=True)
+  (xnor3): MultiplicationWithXNOR(
+    (signum1): Signum(
+      (mean): Mean()
+      (arelu1): AffineReLU(
+        (relu): ReLU()
+      )
+      (arelu2): AffineReLU(
+        (relu): ReLU()
+      )
+      (arelu3): AffineReLU(
+        (relu): ReLU()
+      )
+    )
+    (beta): BetaVector(
+      (mean_vector): MeanVector()
+    )
+    (mul1): ExpandAndMultiply()
+    (signum2): Signum(
+      (mean): Mean()
+      (arelu1): AffineReLU(
+        (relu): ReLU()
+      )
+      (arelu2): AffineReLU(
+        (relu): ReLU()
+      )
+      (arelu3): AffineReLU(
+        (relu): ReLU()
+      )
+    )
+    (alpha): AlphaVector(
+      (mean_vector): MeanVector()
+    )
+    (mul2): ExpandAndMultiply()
+    (bn): BatchNorm1d(800, eps=0.0001, momentum=0.1, affine=True, track_running_stats=True)
+    (conv): Linear(in_features=800, out_features=500, bias=True)
+    (relu): ReLU(inplace)
+  )
+  (fc2_bn): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (fc2_drop): Dropout(p=0.5)
+  (fc2): Linear(in_features=500, out_features=10, bias=True)
+)
+****************************************************************
+		Optimisation Parameters		
+****************************************************************
+Batch Size    = 128
+Learning Rate = 0.010
+Momentum      = 0.90
+Weight Decay  = 0.000010
+Step Size     = 30
+Step Gamma    = 0.10
+Total Epochs  = 60
+
+
+Test Epoch 1, loss 0.1261, Accuracy 96.56%
+Test Epoch 2, loss 0.1000, Accuracy 97.06%
+Test Epoch 3, loss 0.0905, Accuracy 97.33%
+Test Epoch 4, loss 0.0818, Accuracy 97.63%
+Test Epoch 5, loss 0.0773, Accuracy 97.68%
+Test Epoch 6, loss 0.0729, Accuracy 97.77%
+Test Epoch 7, loss 0.0672, Accuracy 97.90%
+Test Epoch 8, loss 0.0647, Accuracy 98.08%
+Test Epoch 9, loss 0.0649, Accuracy 98.10%
+Test Epoch 10, loss 0.0627, Accuracy 98.08%
+Test Epoch 11, loss 0.0605, Accuracy 98.14%
+Test Epoch 12, loss 0.0604, Accuracy 98.17%
+Test Epoch 13, loss 0.0592, Accuracy 98.19%
+Test Epoch 14, loss 0.0564, Accuracy 98.28%
+Test Epoch 15, loss 0.0556, Accuracy 98.34%
+Test Epoch 16, loss 0.0535, Accuracy 98.24%
+Test Epoch 17, loss 0.0535, Accuracy 98.34%
+Test Epoch 18, loss 0.0536, Accuracy 98.37%
+Test Epoch 19, loss 0.0532, Accuracy 98.34%
+Test Epoch 20, loss 0.0519, Accuracy 98.39%
+Test Epoch 21, loss 0.0505, Accuracy 98.41%
+Test Epoch 22, loss 0.0502, Accuracy 98.43%
+Test Epoch 23, loss 0.0507, Accuracy 98.46%
+Test Epoch 24, loss 0.0497, Accuracy 98.50%
+Test Epoch 25, loss 0.0497, Accuracy 98.45%
+Test Epoch 26, loss 0.0498, Accuracy 98.52%
+Test Epoch 27, loss 0.0495, Accuracy 98.40%
+Test Epoch 28, loss 0.0479, Accuracy 98.48%
+Test Epoch 29, loss 0.0476, Accuracy 98.53%
+Test Epoch 30, loss 0.0482, Accuracy 98.46%
+Test Epoch 31, loss 0.0466, Accuracy 98.50%
+Test Epoch 32, loss 0.0462, Accuracy 98.46%
+Test Epoch 33, loss 0.0460, Accuracy 98.53%
+Test Epoch 34, loss 0.0461, Accuracy 98.54%
+Test Epoch 35, loss 0.0460, Accuracy 98.49%
+Test Epoch 36, loss 0.0459, Accuracy 98.54%
+Test Epoch 37, loss 0.0455, Accuracy 98.55%
+Test Epoch 38, loss 0.0453, Accuracy 98.55%
+Test Epoch 39, loss 0.0455, Accuracy 98.59%
+Test Epoch 40, loss 0.0457, Accuracy 98.58%
+Test Epoch 41, loss 0.0455, Accuracy 98.58%
+Test Epoch 42, loss 0.0455, Accuracy 98.54%
+Test Epoch 43, loss 0.0454, Accuracy 98.56%
+Test Epoch 44, loss 0.0457, Accuracy 98.49%
+Test Epoch 45, loss 0.0457, Accuracy 98.48%
+Test Epoch 46, loss 0.0450, Accuracy 98.57%
+Test Epoch 47, loss 0.0450, Accuracy 98.58%
+Test Epoch 48, loss 0.0458, Accuracy 98.51%
+Test Epoch 49, loss 0.0451, Accuracy 98.51%
+Test Epoch 50, loss 0.0456, Accuracy 98.51%
+Test Epoch 51, loss 0.0452, Accuracy 98.58%
+Test Epoch 52, loss 0.0453, Accuracy 98.60%
+Test Epoch 53, loss 0.0454, Accuracy 98.55%
+Test Epoch 54, loss 0.0450, Accuracy 98.57%
+Test Epoch 55, loss 0.0451, Accuracy 98.54%
+Test Epoch 56, loss 0.0451, Accuracy 98.60%
+Test Epoch 57, loss 0.0447, Accuracy 98.59%
+Test Epoch 58, loss 0.0449, Accuracy 98.56%
+Test Epoch 59, loss 0.0443, Accuracy 98.60%
+Test Epoch 60, loss 0.0447, Accuracy 98.56%
